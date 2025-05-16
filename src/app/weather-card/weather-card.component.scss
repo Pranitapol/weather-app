@@ -9,7 +9,8 @@ mat-card{
     position: relative;
     height: 76%;
     top: 10%;
-
+    margin-right: 12px;
+    
     mat-card-header{
     display: flex;
     padding: 16px 16px 0;
@@ -20,8 +21,8 @@ mat-card{
     mat-card-content{
         display: flex;
         justify-content: center;
-        margin-top: 54%;
-
+        margin-top: 54%;    
+        height: 100%;
         
         .add-button{
             // background-color: #000000;
@@ -54,4 +55,40 @@ mat-card{
     display: flex;
     justify-content: center;  
     background: linear-gradient(45deg, #000000, #1e3795f2);
+    padding:0 10px
 }
+
+.wrapper{
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+
+    p{
+        letter-spacing: 4px;
+        font-family: serif;
+        // font-size: 22px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+  
+}
+
+.close-button mat-icon{
+    font-size:30px
+}
+
+mat-card-actions{
+    box-sizing: border-box;
+    min-height: 52px;
+    padding: 8px;
+    position: absolute;
+    left: 77%;
+    top: -3%;
+}
+
+#card-content{
+    margin-top:0
+} 

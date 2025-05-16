@@ -9,7 +9,19 @@
             </div>
         </mat-form-field>
     </div>
-    <div class="wrapper">
-
+    <!-- @if(result){ -->
+    <div  class="wrapper" *ngIf="result">
+        <p>{{localDate | date: 'fullDate'}}</p>
+        <img [src]="weatherSrc" style="width:25%"/>
+        <p>{{temp}}<sup>o</sup></p>
+        <p>{{cityName}}</p>
+        <p>{{weatherDesc}}</p>
+        <button mat-raised-button (click)="onAdd()">Add</button>
     </div>
+<!-- } -->
+ <!-- @else if(error ){ -->
+    <div class="wrapper" *ngIf="error">
+         <p>{{error}}</p>
+    </div>
+<!-- } -->
 </mat-dialog-content>

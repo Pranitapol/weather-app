@@ -43,8 +43,12 @@
     }
 }
 // .mat-mdc-dialog-container .mat-mdc-dialog-content {
-// padding: 0px;
+  // padding: 0px;
 // }
+
+::ng-deep .mat-mdc-dialog-content {
+  max-height: none !important;
+}
 mat-dialog-content{
     display: flex;
     padding-top: 0px;

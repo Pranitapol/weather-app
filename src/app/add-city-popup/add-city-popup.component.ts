@@ -88,6 +88,9 @@ export class AddCityPopupComponent implements OnInit{
             case 'Haze':
               this.weatherSrc='assets/fog.png';
               break;
+              case 'Thunderstorm':
+              this.weatherSrc='assets/thunder.svg';
+              break;
           default:
             this.weatherSrc= 'assets/sunny-1.svg'
     }

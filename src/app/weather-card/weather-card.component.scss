@@ -1,15 +1,15 @@
 mat-card{
     background: linear-gradient(91deg, #7f3838, #0f3e7bc7);
     color: white;
-    height: 335%;
+    min-height:550px;
     display: flex;
-    width: 25%;
+    min-width: 350px !important;
     border-radius: 6%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     position: relative;
     height: 76%;
-    top: 10%;
-    margin-right: 12px;
+    top: 8%;
+    margin-right: 25px;
     
     mat-card-header{
     display: flex;
@@ -48,14 +48,38 @@ mat-card{
     font-size: 97px;
     }
 }
+.container{
+    height: 641px;
+    display: flex;
+    justify-content: flex-start;
+    background: linear-gradient(45deg, #000000, #1e3795f2);
+    padding:0 50px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    max-width: 100vw;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
 
 
 .container{
     height: 641px;
     display: flex;
-    justify-content: center;  
+    justify-content: flex-start;
     background: linear-gradient(45deg, #000000, #1e3795f2);
-    padding:0 10px
+    padding:0 50px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    max-width: 100vw;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+.container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 .wrapper{
@@ -76,8 +100,33 @@ mat-card{
   
 }
 
+.scroll-hint {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+.scroll-hint.left-arrow {
+    left: 10px;
+    right: auto;
+}
+.scroll-hint mat-icon {
+    color: white;
+    font-size: 32px;
+}
+
 .close-button mat-icon{
-    font-size:30px
+    font-size:55px
 }
 
 mat-card-actions{

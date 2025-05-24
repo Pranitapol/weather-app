@@ -85,8 +85,8 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
     // this.weatherData.map((item)=>
     // this.getWeatherIcon(item.weatherdesc))
   }
- getWeatherIcon(weatherDesc:any){
-  console.log(weatherDesc);
+getWeatherIcon(weatherDesc:any){
+  console.log('Weather description:', weatherDesc);
   
     switch(weatherDesc){
       case 'Clouds':
@@ -107,10 +107,15 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
               break;
             case 'Haze':
               this.weatherSrc='assets/fog.png';
+              break; 
+              case 'Thunderstorm':
+              this.weatherSrc='assets/thunder.svg';
               break;
           default:
+            console.log('No matching icon for weather description, using default sunny icon');
             this.weatherSrc= 'assets/sunny-1.svg'
         }
+        console.log('Icon path returned:', this.weatherSrc);
         return this.weatherSrc;
   }
   ngOnDestroy(): void {
@@ -127,9 +132,18 @@ onClose(city:string){
   // this.ngOnInit()
   }
 
-  scrollRight(): void {
+scrollRight(): void {
+  console.log('scrollRight called, current scrollLeft:', this.scrollContainer.nativeElement.scrollLeft);
   this.scrollContainer.nativeElement.scrollBy({
     left: 300,
+    behavior: 'smooth'
+  });
+}
+
+scrollLeft(): void {
+  console.log('scrollLeft called, current scrollLeft:', this.scrollContainer.nativeElement.scrollLeft);
+  this.scrollContainer.nativeElement.scrollBy({
+    left: -300,
     behavior: 'smooth'
   });
 }

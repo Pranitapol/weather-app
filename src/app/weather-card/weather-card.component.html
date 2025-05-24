@@ -1,5 +1,8 @@
 <!-- <p>weather-card works!</p> -->
-<div class="container">
+<div class="container" #scrollContainer>
+    <div class="scroll-hint left-arrow">
+      <mat-icon (click)="scrollLeft()">chevron_left</mat-icon>
+    </div>
     <mat-card>
         
         <mat-card-header>
@@ -27,8 +30,8 @@
 
       
     </mat-card>
-<div class="scroll-hint">
-  <mat-icon>chevron_right</mat-icon>
+<div class="scroll-hint right-arrow">
+  <mat-icon (click)="scrollRight()">chevron_right</mat-icon>
 </div>
     <!-- <mat-icon>arrow_right</mat-icon> -->
 </div>

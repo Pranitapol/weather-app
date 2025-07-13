@@ -1,15 +1,16 @@
 mat-card{
     background: linear-gradient(91deg, #7f3838, #0f3e7bc7);
     color: white;
-    height: 335%;
+    min-height:550px;
     display: flex;
-    width: 25%;
+    min-width: 350px !important;
     border-radius: 6%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     position: relative;
     height: 76%;
-    top: 10%;
-
+    top: 8%;
+    margin-right: 25px;
+    
     mat-card-header{
     display: flex;
     padding: 16px 16px 0;
@@ -20,8 +21,8 @@ mat-card{
     mat-card-content{
         display: flex;
         justify-content: center;
-        margin-top: 54%;
-
+        margin-top: 54%;    
+        height: 100%;
         
         .add-button{
             // background-color: #000000;
@@ -47,11 +48,166 @@ mat-card{
     font-size: 97px;
     }
 }
+.errorMsg{
+position: absolute;
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    z-index: 1;
+    top: 31%;
+    left: 40%;
+    align-items: center;
+    align-content: center;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color:rgb(146 153 179 / 90%);  // transparent dark overlay
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;  // make sure it's above mat-card
+}
+
+.container{
+    height: 641px;
+    display: flex;
+    justify-content: flex-start;
+    background: linear-gradient(45deg, #000000, #1e3795f2);
+    padding:0 50px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    max-width: 100vw;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
 
 
 .container{
     height: 641px;
     display: flex;
-    justify-content: center;  
+    justify-content: flex-start;
     background: linear-gradient(45deg, #000000, #1e3795f2);
+    padding:0 50px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    max-width: 100vw;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
 }
+.container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.wrapper{
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+
+    p{
+        letter-spacing: 4px;
+        font-family: serif;
+        // font-size: 22px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+  
+}
+
+.scroll-hint {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+.scroll-hint.left-arrow {
+    left: 10px;
+    right: auto;
+}
+.scroll-hint mat-icon {
+    color: white;
+    font-size: 32px;
+}
+
+.close-button mat-icon{
+    font-size:55px
+}
+
+mat-card-actions{
+    box-sizing: border-box;
+    min-height: 52px;
+    padding: 8px;
+    position: absolute;
+    left: 77%;
+    top: -3%;
+}
+
+#card-content{
+    margin-top:0
+} 
+  @media (min-width:'412px') and (max-width:'915px') {
+     .container{
+        height: 100%;
+     }
+        mat-card{
+        min-width: 260px !important;
+        height: 74px;
+        /* width: 100%; */
+        position: relative;
+        top: 18%;
+        }
+
+        .scroll-hint.right-arrow {
+        right: 13%;
+        top: 44%;
+        }
+
+        .scroll-hint.left-arrow {
+        left: 32px;
+        top: 44%;
+        }
+        ::ng-deep .mat-mdc-dialog-container{
+            margin:10px
+        }
+        button>mat-icon{
+            font-size: 90px;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    top: 30px;
+        }
+  }
+
+  @media (min-width:'390px') and (max-width:'844px') {
+        mat-card{
+            min-width:300px !important
+        }
+        .container{
+            height: 100%;
+        }
+          ::ng-deep .mat-mdc-dialog-container {
+          padding:10px
+        }
+  }

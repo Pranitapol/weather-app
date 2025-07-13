@@ -18,13 +18,33 @@
 }
 
 .wrapper{
+    // display: flex;
+    // flex:1;
+    width: 50%;
+    // background-color: chocolate;
+    background-color: #847376;
+    color:white;
+    /* text-align: center; */
     display: flex;
-    flex:1;
-    background-color: chocolate;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    p{
+        letter-spacing: 4px;
+        font-family: serif;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+    
+    button{
+        background-color: #5b4d4d;
+        color:white;
+    }
 }
-// .mat-mdc-dialog-container .mat-mdc-dialog-content {
-// padding: 0px;
-// }
+::ng-deep .mat-mdc-dialog-content {
+  max-height: none !important;
+}
 mat-dialog-content{
     display: flex;
     padding-top: 0px;
@@ -37,12 +57,12 @@ mat-form-field{
     display: flex;
     width: 100%;
 }
-.con1{
-    display: flex;
-    position: absolute;
-    top: 147%;
-    left: 13%;
-    
+
+.con1 {
+  display: flex;
+  margin-top: 12px; /* or adjust as needed */
+  position: relative; /* NOT absolute unless truly needed */
+  z-index: 1;
 }
 
 input{
@@ -53,16 +73,11 @@ input{
     padding-top: 0px;
     padding-bottom: 0px;
     height: 70px;
-    width: 400px;
+    width: 352px;
     font-size: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     
 }
-// input:focus{
-//     border:none;
-//     outline: none;
-// }
-
 
 mat-icon{
     height: 53px; 
@@ -86,3 +101,138 @@ mat-icon:hover{
     background-color: transparent !important;
     box-shadow: none !important;
   }
+//   .back-btn{
+//     display: none;
+//   }
+.dialog-content-wrapper {
+  position: relative; /* So absolute back-btn works */
+}
+
+//  .back-btn {
+//     position: absolute;
+//     right: 0px;
+//     // mat-icon{
+        
+//     // height: 41px;
+//     // width: 37px;
+//     // font-size: 44px;
+//     // overflow: hidden;
+//     // margin-top: 3px;
+//     // // margin-left: -20px;
+//     // background: #2db78a;
+//     // color: white;
+//     // border-radius: 60%;
+//     // padding: 5px;
+//     // }
+    
+// }
+// .back-btn:hover{
+//     cursor:pointer
+// }
+.back-btn {
+ position: absolute;
+    top: 0px;
+    left: 98%;
+    z-index: 1000;
+}
+.back-btn mat-icon {
+     height: 53px;
+    width: 50px;
+    font-size: 59px;
+    overflow: hidden;
+    margin-top: 3px;
+    margin-left: -43px;
+    background: #2db78a;
+    color: white;
+    border-radius: 60%;
+    padding: 5px;
+
+}
+
+.back-btn:hover {
+  cursor: pointer;
+}
+  @media (min-width:'412px') and (max-width:'915px') {
+        mat-dialog-content{
+            display: flex;
+        }
+        .header{
+          text-align: center;
+        color: cadetblue;
+        text-indent: 10;
+        font-family: serif;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        // padding-left:24%
+        }
+        .con1{
+            display: flex;
+            position: absolute;
+            top:147%;
+            left:0
+        }
+        mat-icon{
+            margin-left:-70px
+        }
+        .wrapper{
+        width: 100%;
+        background-color: #847376;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        }
+       
+    input{
+    width:342px
+    }
+    .back-btn mat-icon {
+        height: 32px;
+        width: 33px;
+        font-size: 37px;
+        overflow: hidden;
+        margin-top: 3px;
+        margin-left: -38px;
+        background: #2db78a;
+        color: white;
+        border-radius: 60%;
+        padding: 5px;
+    }
+  }
+
+@media (min-width:'390px') and (max-width:'844px') {  
+  .con1{
+        display: flex;
+        position: absolute;
+        top: 147%;
+        left: 7%;
+    }
+    input{
+         width: 300px;
+    }
+
+   .wrapper{
+        width: 100%;
+        background-color: #847376;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .back-btn mat-icon {
+        height: 32px;
+        width: 33px;
+        font-size: 37px;
+        overflow: hidden;
+        margin-top: 3px;
+        margin-left: -38px;
+        background: #2db78a;
+        color: white;
+        border-radius: 60%;
+        padding: 5px;
+    }
+  }
+  

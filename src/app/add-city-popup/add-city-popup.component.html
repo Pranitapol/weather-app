@@ -1,6 +1,11 @@
 
-<mat-dialog-content>
-    <div class="container">
+
+<mat-dialog-content class="dialog-content-wrapper">
+  <div class="back-btn" (click)="backToSearch()">
+  <mat-icon>arrow_back</mat-icon>
+</div>
+    @if(!isHidden){
+    <div class="container" >
         <mat-form-field>
             <h4 class="header">Search Cities </h4>
             <div class="con1">    
@@ -8,8 +13,22 @@
                 <mat-icon (click)="search()">search</mat-icon>
             </div>
         </mat-form-field>
+    </div>}
+    <!-- @if(result){ -->
+    <!-- @if(isHidden){ -->
+        <div  class="wrapper" *ngIf="result">
+        <p>{{localDate | date: 'fullDate'}}</p>
+        <img [src]="weatherSrc" style="width:25%"/>
+        <p>{{temp}}<sup>o</sup></p>
+        <p>{{cityName}}</p>
+        <p>{{weatherDesc}}</p>
+        <button mat-raised-button (click)="onAdd()">Add</button>
     </div>
-    <div class="wrapper">
-
+<!-- } -->
+<!-- } -->
+ <!-- @else if(error ){ -->
+    <div class="wrapper" *ngIf="error">
+         <p>{{error}}</p>
     </div>
+<!-- } -->
 </mat-dialog-content>

@@ -1,6 +1,19 @@
 <!-- <p>weather-card works!</p> -->
-<div class="container">
+  <!-- <div *ngIf="existMsg" class="errorMsg">
+        {{existMsg}}
+    
+</div> -->
+<div *ngIf="existMsg" class="overlay">
+  <div class="errorMsg">
+    {{existMsg}}
+  </div>
+</div>
+<div class="container" #scrollContainer>
+    <div class="scroll-hint left-arrow">
+      <mat-icon (click)="scrollLeft()">chevron_left</mat-icon>
+    </div>
     <mat-card>
+        
         <mat-card-header>
             <mat-card-title> Add City </mat-card-title>
         </mat-card-header>
@@ -8,4 +21,28 @@
            <button mat-button class="add-button" type="submit" (click)="addCity()"> <mat-icon>add</mat-icon></button>
         </mat-card-content>
     </mat-card>
+    <mat-card *ngFor="let city of weatherData">
+          <mat-card-actions>
+          <button mat-button class="close-button"><mat-icon (click)="onClose(city.cityname)">close</mat-icon></button>
+        </mat-card-actions>
+        <mat-card-header>
+            <mat-card-title> {{city.cityname}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content id="card-content">
+            <div class="wrapper">
+                <img [src]="getWeatherIcon(city.weatherdesc)" style="width:150%"/>     
+                <p style="font-size:32px">{{city.temp}}<sup>o</sup></p>
+                <p style="font-size: 20px;">{{city.weatherdesc}}</p>
+                <P>{{city.localdate | date:'fullDate'}}</P>
+            </div>
+        </mat-card-content>  
+    </mat-card>
+
+    <div class="scroll-hint right-arrow">
+        <mat-icon (click)="scrollRight()">chevron_right</mat-icon>
+    </div>
+    <!-- <mat-icon>arrow_right</mat-icon> -->
+    
 </div>
+
+

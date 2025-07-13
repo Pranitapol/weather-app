@@ -48,6 +48,32 @@ mat-card{
     font-size: 97px;
     }
 }
+.errorMsg{
+position: absolute;
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    z-index: 1;
+    top: 31%;
+    left: 40%;
+    align-items: center;
+    align-content: center;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color:rgb(146 153 179 / 90%);  // transparent dark overlay
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;  // make sure it's above mat-card
+}
+
 .container{
     height: 641px;
     display: flex;
@@ -141,3 +167,47 @@ mat-card-actions{
 #card-content{
     margin-top:0
 } 
+  @media (min-width:'412px') and (max-width:'915px') {
+     .container{
+        height: 100%;
+     }
+        mat-card{
+        min-width: 260px !important;
+        height: 74px;
+        /* width: 100%; */
+        position: relative;
+        top: 18%;
+        }
+
+        .scroll-hint.right-arrow {
+        right: 13%;
+        top: 44%;
+        }
+
+        .scroll-hint.left-arrow {
+        left: 32px;
+        top: 44%;
+        }
+        ::ng-deep .mat-mdc-dialog-container{
+            margin:10px
+        }
+        button>mat-icon{
+            font-size: 90px;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    top: 30px;
+        }
+  }
+
+  @media (min-width:'390px') and (max-width:'844px') {
+        mat-card{
+            min-width:300px !important
+        }
+        .container{
+            height: 100%;
+        }
+          ::ng-deep .mat-mdc-dialog-container {
+          padding:10px
+        }
+  }

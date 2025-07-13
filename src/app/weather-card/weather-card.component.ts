@@ -25,13 +25,15 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
   refreshSub!: Subscription;
   weatherDesc: any;
   weatherSrc: string='';
+  existMsg:string='';
+
   constructor(private dialog:MatDialog,private service:WeatherApiService,  @Inject(PLATFORM_ID) private platformId: Object,){}
 @ViewChild('scrollContainer', { static: true }) scrollContainer!: ElementRef;
   ngOnInit(): void {
   if (isPlatformBrowser(this.platformId)) {
     const saved = localStorage.getItem('addedCities');
     if (saved) {
-      this.result = JSON.parse(saved);
+      this.result = saved?JSON.parse(saved):[];
       this.result.forEach(city => this.fetchWeather(city));
     }
 
@@ -41,7 +43,6 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
   }
   }
   addCity(){
-    console.log('city button has been clicked')
    const dialogref= this.dialog.open(AddCityPopupComponent,{
       data:'dwgih',
       // width:'1500px',
@@ -51,14 +52,21 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
     })
 
     dialogref.afterClosed().subscribe(city=>{
-      console.log('result',city);
-      if(!this.result.includes(city)){
+        if(!city) return;
+          const exists = this.result.some(
+          (c) => c.cityname.toLowerCase() === city.cityname.toLowerCase()
+        );
+        if (exists) {
+          this.existMsg = 'City already exists';
+          setTimeout(() => {
+            this.existMsg = '';
+          }, 2000);
+      } else {
         this.result.push(city);
-        if (typeof window !== 'undefined' && localStorage) {
-          localStorage.setItem('addedCities', JSON.stringify(this.result));
-        }
-        this.fetchWeather(city)
+        localStorage.setItem('addedCities', JSON.stringify(this.result));
+        this.fetchWeather(city.cityname);
       }
+   
     })
   }
 
@@ -86,7 +94,7 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
     // this.getWeatherIcon(item.weatherdesc))
   }
 getWeatherIcon(weatherDesc:any){
-  console.log('Weather description:', weatherDesc);
+  // console.log('Weather description:', weatherDesc);
   
     switch(weatherDesc){
       case 'Clouds':
@@ -115,7 +123,7 @@ getWeatherIcon(weatherDesc:any){
             console.log('No matching icon for weather description, using default sunny icon');
             this.weatherSrc= 'assets/sunny-1.svg'
         }
-        console.log('Icon path returned:', this.weatherSrc);
+        // console.log('Icon path returned:', this.weatherSrc);
         return this.weatherSrc;
   }
   ngOnDestroy(): void {
@@ -125,7 +133,6 @@ getWeatherIcon(weatherDesc:any){
 }
 onClose(city:string){
   const cities:any= localStorage.getItem('addedCities');
-  console.log(cities,city);
   const filtered=JSON.parse(cities).filter((item:any)=>item!==city)
     localStorage.setItem('addedCities',JSON.stringify(filtered))
     window.location.reload()

@@ -1,4 +1,13 @@
 <!-- <p>weather-card works!</p> -->
+  <!-- <div *ngIf="existMsg" class="errorMsg">
+        {{existMsg}}
+    
+</div> -->
+<div *ngIf="existMsg" class="overlay">
+  <div class="errorMsg">
+    {{existMsg}}
+  </div>
+</div>
 <div class="container" #scrollContainer>
     <div class="scroll-hint left-arrow">
       <mat-icon (click)="scrollLeft()">chevron_left</mat-icon>
@@ -21,17 +30,19 @@
         </mat-card-header>
         <mat-card-content id="card-content">
             <div class="wrapper">
-            <img [src]="getWeatherIcon(city.weatherdesc)" style="width:150%"/>     
-            <p style="font-size:32px">{{city.temp}}<sup>o</sup></p>
-            <p style="font-size: 20px;">{{city.weatherdesc}}</p>
-            <P>{{city.localdate | date:'fullDate'}}</P>
+                <img [src]="getWeatherIcon(city.weatherdesc)" style="width:150%"/>     
+                <p style="font-size:32px">{{city.temp}}<sup>o</sup></p>
+                <p style="font-size: 20px;">{{city.weatherdesc}}</p>
+                <P>{{city.localdate | date:'fullDate'}}</P>
             </div>
-        </mat-card-content>
-
-      
+        </mat-card-content>  
     </mat-card>
-<div class="scroll-hint right-arrow">
-  <mat-icon (click)="scrollRight()">chevron_right</mat-icon>
-</div>
+
+    <div class="scroll-hint right-arrow">
+        <mat-icon (click)="scrollRight()">chevron_right</mat-icon>
+    </div>
     <!-- <mat-icon>arrow_right</mat-icon> -->
+    
 </div>
+
+

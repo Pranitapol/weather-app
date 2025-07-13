@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { WeatherApiService } from '../weather-api.service';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule, NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 // import * as from '../../../assets'
 @Component({
   selector: 'app-add-city-popup',
@@ -26,22 +27,36 @@ export class AddCityPopupComponent implements OnInit{
   localDate: any;
   weatherSrc:string='';
   dataToPass:any;
+  isHidden:boolean=false
 
   constructor(private dialogref:MatDialogRef<AddCityPopupComponent>,@Inject(MAT_DIALOG_DATA)public data:any,
-  private service:WeatherApiService){}
+  private service:WeatherApiService,private router:Router){}
 
   inputValue:string=''
   ngOnInit(): void {
-    console.log('in popup',this.data)
+    // console.log('in popup',this.data)
   }
 
   onChange(event:any){
     // console.log('event',event)
     this.inputValue=event.target.value
   }
+  
+  backToSearch(): void {
+    // this.isHidden = false;
+    this.dialogref.close()
+    setTimeout(() => {
+      this.router.navigateByUrl('/');
+    }, 300);
+  }
 
   search(){
     console.log('in search',this.inputValue)
+    if(window.innerWidth<=412)
+    {this.isHidden=true;}
+
+     if( window.innerWidth<=390)
+    {this.isHidden=true;}
     this.service.getData(this.inputValue).subscribe(
     { 
       next: (res:any)=>{
@@ -61,7 +76,6 @@ export class AddCityPopupComponent implements OnInit{
         this.result='';
         if(err){
         this.error=err.error.message
-        console.log(this.error,err)
         }
       }
     }
@@ -97,13 +111,24 @@ export class AddCityPopupComponent implements OnInit{
   }
 
   onAdd(){
-    console.log('on add');
+
+    // const exist=window.localStorage.getItem('addedCities');
+    // console.log(exist);
+    
+  // const cityExists = exist.some(
+  //   (city: any) => city.cityname.toLowerCase() === this.cityName.toLowerCase()
+  // );
+
+  // if (cityExists) {
+  //   this.error = 'City already exists';
+  //   return;
+  // }
     this.dataToPass={
       cityname:this.cityName,
       weatherdesc:this.weatherDesc,
       temp:this.temp,
       localdate:this.localDate
     }
-    this.dialogref.close(this.cityName)
+    this.dialogref.close(this.dataToPass)
   }
 }

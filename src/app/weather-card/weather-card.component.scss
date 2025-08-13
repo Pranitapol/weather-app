@@ -12,10 +12,9 @@ mat-card{
     margin-right: 25px;
     
     mat-card-header{
-    display: flex;
-    padding: 16px 16px 0;
-    justify-content: center;
-
+        display: flex;
+        padding: 16px 16px 0;
+        justify-content: center;
     }
 
     mat-card-content{
@@ -43,73 +42,73 @@ mat-card{
     }
 
     mat-icon{
-    height: 78px;
-    width: 92px;
-    font-size: 97px;
+        height: 78px;
+        width: 92px;
+        font-size: 97px;
     }
 }
-.errorMsg{
-position: absolute;
-    width: 300px;
-    height: 100px;
-    text-align: center;
-    background-color: white;
-    color: black;
-    z-index: 1;
-    top: 31%;
-    left: 40%;
+    .errorMsg{
+    position: absolute;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        z-index: 1;
+        top: 31%;
+        left: 40%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color:rgb(146 153 179 / 90%);  // transparent dark overlay
+    display: flex;
     align-items: center;
-    align-content: center;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color:rgb(146 153 179 / 90%);  // transparent dark overlay
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;  // make sure it's above mat-card
-}
+    justify-content: center;
+    z-index: 999;  // make sure it's above mat-card
+    }
 
-.container{
-    height: 641px;
-    display: flex;
-    justify-content: flex-start;
-    background: linear-gradient(45deg, #000000, #1e3795f2);
-    padding:0 50px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-wrap: nowrap;
-    max-width: 100vw;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
-}
+    .container{
+        height: 641px;
+        display: flex;
+        justify-content: flex-start;
+        background: linear-gradient(45deg, #000000, #1e3795f2);
+        padding:0 50px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        max-width: 100vw;
+        -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+    }
 
 
-.container{
-    height: 641px;
-    display: flex;
-    justify-content: flex-start;
-    background: linear-gradient(45deg, #000000, #1e3795f2);
-    padding:0 50px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-wrap: nowrap;
-    max-width: 100vw;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
-}
+// .container{
+//     height: 641px;
+//     display: flex;
+//     justify-content: flex-start;
+//     background: linear-gradient(45deg, #000000, #1e3795f2);
+//     padding:0 50px;
+//     overflow-x: auto;
+//     overflow-y: hidden;
+//     flex-wrap: nowrap;
+//     max-width: 100vw;
+//     -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+//     scrollbar-width: none; /* Firefox */
+//     -ms-overflow-style: none;  /* IE and Edge */
+// }
 .container::-webkit-scrollbar {
     display: none; /* Chrome, Safari and Opera */
 }
 
 .wrapper{
- 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,47 +125,47 @@ position: absolute;
   
 }
 
-.scroll-hint {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    padding: 8px;
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-}
-.scroll-hint.left-arrow {
-    left: 10px;
-    right: auto;
-}
-.scroll-hint mat-icon {
-    color: white;
-    font-size: 32px;
-}
+    .scroll-hint {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        padding: 8px;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+    .scroll-hint.left-arrow {
+        left: 10px;
+        right: auto;
+    }
+    .scroll-hint mat-icon {
+        color: white;
+        font-size: 32px;
+    }
 
-.close-button mat-icon{
-    font-size:55px
-}
+    .close-button mat-icon{
+        font-size:55px
+    }
 
-mat-card-actions{
-    box-sizing: border-box;
-    min-height: 52px;
-    padding: 8px;
-    position: absolute;
-    left: 77%;
-    top: -3%;
-}
+    mat-card-actions{
+        box-sizing: border-box;
+        min-height: 52px;
+        padding: 8px;
+        position: absolute;
+        left: 77%;
+        top: -3%;
+    }
 
-#card-content{
-    margin-top:0
-} 
+    #card-content{
+        margin-top:0
+    } 
   @media (min-width:'412px') and (max-width:'915px') {
      .container{
         height: 100%;
@@ -177,40 +176,40 @@ mat-card-actions{
         /* width: 100%; */
         position: relative;
         top: 18%;
-        }
+    }
 
-        .scroll-hint.right-arrow {
-            right: 13%;
-            top: 44%;
-        }
+    .scroll-hint.right-arrow {
+        right: 13%;
+        top: 44%;
+    }
 
-        .scroll-hint.left-arrow {
-            left: 32px;
-            top: 44%;
-        }
-        ::ng-deep .mat-mdc-dialog-container{
-            margin:10px
-        }
-        button > mat-icon{
-            font-size: 90px;
-            width: 100%;
-            height: 100px;
-            margin: 0;
-            top: 30px;
-        }
-.errorMsg{
-position: absolute;
-    width: 300px;
-    height: 100px;
-    text-align: center;
-    background-color: white;
-    color: black;
-    z-index: 1;
-    top: 31%;
-    left: 17%;
-    align-items: center;
-    align-content: center;
-}
+    .scroll-hint.left-arrow {
+        left: 32px;
+        top: 44%;
+    }
+    ::ng-deep .mat-mdc-dialog-container{
+        margin:10px
+    }
+    button > mat-icon{
+        font-size: 90px;
+        width: 100%;
+        height: 100px;
+        margin: 0;
+        top: 30px;
+    }
+    .errorMsg{
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        z-index: 1;
+        top: 31%;
+        left: 17%;
+        align-items: center;
+        align-content: center;
+    }
 
   }
 
@@ -244,38 +243,25 @@ position: absolute;
         height: 100%;
      }
         mat-card{
-        min-width: 260px !important;
-        // height: 74px;
-        // /* width: 100%; */
-        // position: relative;
-        // top: 14%;
+         min-width: 260px !important;    
         }
 
-        // .scroll-hint.right-arrow {
-        //     right: 13%;
-        //     top: 44%;
-        // }
-
-        // .scroll-hint.left-arrow {
-        //     left: 32px;
-        //     top: 44%;
-        // }
-        ::ng-deep .mat-mdc-dialog-container{
-            padding:10px
-        }
-       .errorMsg{
-    position: absolute;
-    width: 300px;
-    height: 100px;
-    text-align: center;
-    background-color: white;
-    color: black;
-    z-index: 1;
-    top: 31%;
-    left: 15%;
-    align-items: center;
-    align-content: center;
-}
+    ::ng-deep .mat-mdc-dialog-container{
+        padding:10px
+    }
+    .errorMsg{
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        z-index: 1;
+        top: 31%;
+        left: 15%;
+        align-items: center;
+        align-content: center;
+    }
   }
 
   
@@ -284,22 +270,8 @@ position: absolute;
         height: 100%;
      }
         mat-card{
-        min-width: 300px !important;
-        // height: 74px;
-        // /* width: 100%; */
-        // position: relative;
-        // top: 14%;
+            min-width: 300px !important;
         }
-
-        // .scroll-hint.right-arrow {
-        //     right: 13%;
-        //     top: 44%;
-        // }
-
-        // .scroll-hint.left-arrow {
-        //     left: 32px;
-        //     top: 44%;
-        // }
         ::ng-deep .mat-mdc-dialog-container{
             padding:10px
         }

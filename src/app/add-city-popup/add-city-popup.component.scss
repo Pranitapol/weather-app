@@ -1,8 +1,4 @@
 .container{
-    // position: relative;
-    // top:10%;
-    // left:10%;
-    // z-index:1000;
     display: flex;
     flex:1;
     background-color: #ffff;
@@ -18,13 +14,9 @@
 }
 
 .wrapper{
-    // display: flex;
-    // flex:1;
     width: 50%;
-    // background-color: chocolate;
     background-color: #847376;
     color:white;
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,33 +100,14 @@ mat-icon:hover{
   position: relative; /* So absolute back-btn works */
 }
 
-//  .back-btn {
-//     position: absolute;
-//     right: 0px;
-//     // mat-icon{
-        
-//     // height: 41px;
-//     // width: 37px;
-//     // font-size: 44px;
-//     // overflow: hidden;
-//     // margin-top: 3px;
-//     // // margin-left: -20px;
-//     // background: #2db78a;
-//     // color: white;
-//     // border-radius: 60%;
-//     // padding: 5px;
-//     // }
-    
-// }
-// .back-btn:hover{
-//     cursor:pointer
-// }
+
 .back-btn {
  position: absolute;
     top: 0px;
     left: 98%;
     z-index: 1000;
 }
+
 .back-btn mat-icon {
      height: 53px;
     width: 50px;
@@ -146,189 +119,189 @@ mat-icon:hover{
     color: white;
     border-radius: 60%;
     padding: 5px;
-
 }
 
 .back-btn:hover {
   cursor: pointer;
 }
+
   @media (min-width:'412px') and (max-width:'915px') {
-        mat-dialog-content{
+    mat-dialog-content{
             display: flex;
-        }
-        .header{
-        text-align: center;
-        color: cadetblue;
-        text-indent: 10;
-        font-family: serif;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        // padding-left:24%
-        }
-        .con1{
-            display: flex;
-            position: absolute;
-            top:147%;
-            left:0
-        }
-        mat-icon{
-            margin-left:-70px
-        }
-        .wrapper{
-        width: 100%;
-        background-color: #847376;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        }
+      }
+    .header{
+      text-align: center;
+      color: cadetblue;
+      text-indent: 10;
+      font-family: serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .con1{
+      display: flex;
+      position: absolute;
+      top:147%;
+      left:0
+    }
+    mat-icon{
+      margin-left:-70px
+    }
+    .wrapper{
+      width: 100%;
+      background-color: #847376;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
        
     input{
-    width:342px
+      width:342px
     }
+
     .back-btn mat-icon {
-        height: 32px;
-        width: 33px;
-        font-size: 37px;
-        overflow: hidden;
-        margin-top: 3px;
-        margin-left: -38px;
-        background: #2db78a;
-        color: white;
-        border-radius: 60%;
-        padding: 5px;
+      height: 32px;
+      width: 33px;
+      font-size: 37px;
+      overflow: hidden;
+      margin-top: 3px;
+      margin-left: -38px;
+      background: #2db78a;
+      color: white;
+      border-radius: 60%;
+      padding: 5px;
     }
   }
 
-@media (min-width:'390px') and (max-width:'844px') {  
-  .con1{
-        display: flex;
-        position: absolute;
-        top: 147%;
-        left: 7%;
+  @media (min-width:'390px') and (max-width:'844px') {  
+    .con1{
+      display: flex;
+      position: absolute;
+      top: 147%;
+      left: 7%;
     }
     input{
          width: 300px;
     }
-
    .wrapper{
-        width: 100%;
-        background-color: #847376;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+      width: 100%;
+      background-color: #847376;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
     }
 
     .back-btn mat-icon {
-        height: 32px;
-        width: 33px;
-        font-size: 37px;
-        overflow: hidden;
-        margin-top: 3px;
-        margin-left: -38px;
-        background: #2db78a;
-        color: white;
-        border-radius: 60%;
-        padding: 5px;
+      height: 32px;
+      width: 33px;
+      font-size: 37px;
+      overflow: hidden;
+      margin-top: 3px;
+      margin-left: -38px;
+      background: #2db78a;
+      color: white;
+      border-radius: 60%;
+      padding: 5px;
     }
   }
 
   @media (min-width:'360px') and (max-width:'740px') {  
    mat-dialog-content{
-            display: flex;
-        }
-        .header{
-        text-align: center;
-        color: cadetblue;
-        text-indent: 10;
-        font-family: serif;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        // padding-left:24%
-        }
-        .con1{
-            display: flex;
-            position: absolute;
-            top:147%;
-            left:0
-        }
-        mat-icon{
-            margin-left:-70px
-        }
-        .wrapper{
-        width: 100%;
-        background-color: #847376;
-        color: white;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        }
+    }
+  .header{
+      text-align: center;
+      color: cadetblue;
+      text-indent: 10;
+      font-family: serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      // padding-left:24%
+    }
+  .con1{
+      display: flex;
+      position: absolute;
+      top:147%;
+      left:0
+    }
+    mat-icon{
+      margin-left:-70px
+    }
+    .wrapper{
+      width: 100%;
+      background-color: #847376;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
        
     input{
-    width:342px
+      width:342px
     }
     .back-btn mat-icon {
-        height: 32px;
-        width: 33px;
-        font-size: 37px;
-        overflow: hidden;
-        margin-top: 3px;
-        margin-left: -38px;
-        background: #2db78a;
-        color: white;
-        border-radius: 60%;
-        padding: 5px;
+      height: 32px;
+      width: 33px;
+      font-size: 37px;
+      overflow: hidden;
+      margin-top: 3px;
+      margin-left: -38px;
+      background: #2db78a;
+      color: white;
+      border-radius: 60%;
+      padding: 5px;
     }
-  }  @media (min-width:'430px') and (max-width:'932px') {  
+  } 
+  @media (min-width:'430px') and (max-width:'932px') {  
    mat-dialog-content{
-            display: flex;
-        }
-        .header{
-        text-align: center;
-        color: cadetblue;
-        text-indent: 10;
-        font-family: serif;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        // padding-left:24%
-        }
-        .con1{
-            display: flex;
-            position: absolute;
-            top:147%;
-            left:0
-        }
-        mat-icon{
-            margin-left:-70px
-        }
-        .wrapper{
-        width: 100%;
-        background-color: #847376;
-        color: white;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        }
+    }
+    .header{
+      text-align: center;
+      color: cadetblue;
+      text-indent: 10;
+      font-family: serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+        // padding-left:24%
+    }
+    .con1{
+        display: flex;
+        position: absolute;
+        top:147%;
+        left:0
+    }
+    mat-icon{
+       margin-left:-70px
+      }
+    .wrapper{
+      width: 100%;
+      background-color: #847376;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
        
     input{
-    width:342px
+      width:342px
     }
     .back-btn mat-icon {
-        height: 32px;
-        width: 33px;
-        font-size: 37px;
-        overflow: hidden;
-        margin-top: 3px;
-        margin-left: -38px;
-        background: #2db78a;
-        color: white;
-        border-radius: 60%;
-        padding: 5px;
+      height: 32px;
+      width: 33px;
+      font-size: 37px;
+      overflow: hidden;
+      margin-top: 3px;
+      margin-left: -38px;
+      background: #2db78a;
+      color: white;
+      border-radius: 60%;
+      padding: 5px;
     }
   }
   

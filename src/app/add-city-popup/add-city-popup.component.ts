@@ -34,16 +34,13 @@ export class AddCityPopupComponent implements OnInit{
 
   inputValue:string=''
   ngOnInit(): void {
-    // console.log('in popup',this.data)
   }
 
   onChange(event:any){
-    // console.log('event',event)
     this.inputValue=event.target.value
   }
   
   backToSearch(): void {
-    // this.isHidden = false;
     this.dialogref.close()
     setTimeout(() => {
       this.router.navigateByUrl('/');
@@ -69,9 +66,6 @@ export class AddCityPopupComponent implements OnInit{
         this.cityName=res.name;
         this.temp=Math.floor(res.main.temp);
         this.localDate = new Date(res.dt * 1000);
-        // const localdate = new Date(utcDate.getTime() + res.timezone * 1000); 
-        // this.localDate = localdate;
-
         this.getWeatherIcon()
       
       },
@@ -115,17 +109,6 @@ export class AddCityPopupComponent implements OnInit{
 
   onAdd(){
 
-    // const exist=window.localStorage.getItem('addedCities');
-    // console.log(exist);
-    
-  // const cityExists = exist.some(
-  //   (city: any) => city.cityname.toLowerCase() === this.cityName.toLowerCase()
-  // );
-
-  // if (cityExists) {
-  //   this.error = 'City already exists';
-  //   return;
-  // }
     this.dataToPass={
       cityname:this.cityName,
       weatherdesc:this.weatherDesc,

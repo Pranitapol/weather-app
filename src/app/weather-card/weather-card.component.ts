@@ -42,6 +42,7 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
     });
   }
   }
+
   addCity(){
    const dialogref= this.dialog.open(AddCityPopupComponent,{
       data:'dwgih',
@@ -83,19 +84,13 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
      const index=this.weatherData.findIndex((c:any)=>c.cityname===cityName);   
     if(index>-1){
       this.weatherData[index]=updated;
-      // this.getWeatherIcon(updated.weatherdesc)
     }else{
       this.weatherData.push(updated)
-      // this.getWeatherIcon(updated.weatherdesc)
     }
     })
-   
-    // this.weatherData.map((item)=>
-    // this.getWeatherIcon(item.weatherdesc))
   }
-getWeatherIcon(weatherDesc:any){
-  // console.log('Weather description:', weatherDesc);
-  
+  getWeatherIcon(weatherDesc:any){
+
     switch(weatherDesc){
       case 'Clouds':
         this.weatherSrc= 'assets/cloudy.svg';
@@ -123,74 +118,59 @@ getWeatherIcon(weatherDesc:any){
             console.log('No matching icon for weather description, using default sunny icon');
             this.weatherSrc= 'assets/sunny-1.svg'
         }
-        // console.log('Icon path returned:', this.weatherSrc);
-        return this.weatherSrc;
+    return this.weatherSrc;
   }
   ngOnDestroy(): void {
   if (this.refreshSub) {
     this.refreshSub.unsubscribe();
   }
-}
-onClose(city:string){
-  const cities:any= localStorage.getItem('addedCities');
-  const filtered=JSON.parse(cities).filter((item:any)=>item!==city)
+  }
+  onClose(city:string){
+    const cities:any= localStorage.getItem('addedCities');    
+    const filtered=JSON.parse(cities).filter((item:any)=>item.cityname!==city)
     localStorage.setItem('addedCities',JSON.stringify(filtered))
     window.location.reload()
-  // this.ngOnInit()
   }
 
-scrollRight(): void {
-  // console.log('scrollRight called, current scrollLeft:', this.scrollContainer.nativeElement.scrollLeft);
-  if(window.innerWidth<=430){
-  this.scrollContainer.nativeElement.scrollBy({
-    left: 320,
-    behavior: 'smooth'
-  }); 
-}
+  scrollRight(): void {
+    if(window.innerWidth<=430){
+    this.scrollContainer.nativeElement.scrollBy({
+      left: 320,
+      behavior: 'smooth'
+    }); 
+  }
   if(window.innerWidth<=360){
     this.scrollContainer.nativeElement.scrollBy({
     left: 280,
     behavior: 'smooth'
-  }); 
+   }); 
   }
    if(window.innerWidth>=1056){
     this.scrollContainer.nativeElement.scrollBy({
     left: 280,
     behavior: 'smooth'
-  });
+   });
   }
-  // const container = this.scrollContainer.nativeElement;
-  // const card = container.querySelector('mat-card');
-  // if (card) {
-  //   container.scrollBy({ left: -card.offsetWidth, behavior: 'smooth' });
-  // }
 }
 
 scrollLeft(): void {
-  console.log('scrollLeft called, current scrollLeft:', this.scrollContainer.nativeElement.scrollLeft);
   if(window.innerWidth<=430){
-  this.scrollContainer.nativeElement.scrollBy({
-    left: -320,
-    behavior: 'smooth'
-  });
-  }
+    this.scrollContainer.nativeElement.scrollBy({
+      left: -320,
+      behavior: 'smooth'
+      });
+    }
     if(window.innerWidth<=360){
       this.scrollContainer.nativeElement.scrollBy({
-    left: -300,
-    behavior: 'smooth'
-  }); 
-}
+      left: -300,
+      behavior: 'smooth'
+      }); 
+    }
    if(window.innerWidth>=1056){
-    this.scrollContainer.nativeElement.scrollBy({
-    left: -300,
-    behavior: 'smooth'
-  });
-}
-
-  //  const container = this.scrollContainer.nativeElement;
-  // const card = container.querySelector('mat-card');
-  // if (card) {
-  //   container.scrollBy({ left: card.offsetWidth, behavior: 'smooth' });
-  // }
-}
+      this.scrollContainer.nativeElement.scrollBy({
+      left: -300,
+      behavior: 'smooth'
+      });
+    }
+  }
 }

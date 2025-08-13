@@ -51,11 +51,14 @@ export class AddCityPopupComponent implements OnInit{
   }
 
   search(){
-    console.log('in search',this.inputValue)
     if(window.innerWidth<=412)
     {this.isHidden=true;}
 
      if( window.innerWidth<=390)
+    {this.isHidden=true;}
+        if( window.innerWidth<=430)
+    {this.isHidden=true;}
+           if( window.innerWidth<=360)
     {this.isHidden=true;}
     this.service.getData(this.inputValue).subscribe(
     { 

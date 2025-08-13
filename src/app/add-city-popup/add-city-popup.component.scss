@@ -157,7 +157,7 @@ mat-icon:hover{
             display: flex;
         }
         .header{
-          text-align: center;
+        text-align: center;
         color: cadetblue;
         text-indent: 10;
         font-family: serif;
@@ -222,6 +222,102 @@ mat-icon:hover{
         justify-content: space-evenly;
     }
 
+    .back-btn mat-icon {
+        height: 32px;
+        width: 33px;
+        font-size: 37px;
+        overflow: hidden;
+        margin-top: 3px;
+        margin-left: -38px;
+        background: #2db78a;
+        color: white;
+        border-radius: 60%;
+        padding: 5px;
+    }
+  }
+
+  @media (min-width:'360px') and (max-width:'740px') {  
+   mat-dialog-content{
+            display: flex;
+        }
+        .header{
+        text-align: center;
+        color: cadetblue;
+        text-indent: 10;
+        font-family: serif;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        // padding-left:24%
+        }
+        .con1{
+            display: flex;
+            position: absolute;
+            top:147%;
+            left:0
+        }
+        mat-icon{
+            margin-left:-70px
+        }
+        .wrapper{
+        width: 100%;
+        background-color: #847376;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        }
+       
+    input{
+    width:342px
+    }
+    .back-btn mat-icon {
+        height: 32px;
+        width: 33px;
+        font-size: 37px;
+        overflow: hidden;
+        margin-top: 3px;
+        margin-left: -38px;
+        background: #2db78a;
+        color: white;
+        border-radius: 60%;
+        padding: 5px;
+    }
+  }  @media (min-width:'430px') and (max-width:'932px') {  
+   mat-dialog-content{
+            display: flex;
+        }
+        .header{
+        text-align: center;
+        color: cadetblue;
+        text-indent: 10;
+        font-family: serif;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        // padding-left:24%
+        }
+        .con1{
+            display: flex;
+            position: absolute;
+            top:147%;
+            left:0
+        }
+        mat-icon{
+            margin-left:-70px
+        }
+        .wrapper{
+        width: 100%;
+        background-color: #847376;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        }
+       
+    input{
+    width:342px
+    }
     .back-btn mat-icon {
         height: 32px;
         width: 33px;

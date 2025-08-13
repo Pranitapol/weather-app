@@ -34,11 +34,11 @@ export class WeatherCardComponent implements OnInit ,OnDestroy{
     const saved = localStorage.getItem('addedCities');
     if (saved) {
       this.result = saved?JSON.parse(saved):[];
-      this.result.forEach(city => this.fetchWeather(city));
+      this.result.forEach(city => this.fetchWeather(city.cityname));
     }
 
     this.refreshSub = interval(300000).subscribe(() => {
-      this.result.forEach(city => this.fetchWeather(city));
+      this.result.forEach(city => this.fetchWeather(city.cityname));
     });
   }
   }
@@ -140,18 +140,57 @@ onClose(city:string){
   }
 
 scrollRight(): void {
-  console.log('scrollRight called, current scrollLeft:', this.scrollContainer.nativeElement.scrollLeft);
+  // console.log('scrollRight called, current scrollLeft:', this.scrollContainer.nativeElement.scrollLeft);
+  if(window.innerWidth<=430){
   this.scrollContainer.nativeElement.scrollBy({
-    left: 300,
+    left: 320,
+    behavior: 'smooth'
+  }); 
+}
+  if(window.innerWidth<=360){
+    this.scrollContainer.nativeElement.scrollBy({
+    left: 280,
+    behavior: 'smooth'
+  }); 
+  }
+   if(window.innerWidth>=1056){
+    this.scrollContainer.nativeElement.scrollBy({
+    left: 280,
     behavior: 'smooth'
   });
+  }
+  // const container = this.scrollContainer.nativeElement;
+  // const card = container.querySelector('mat-card');
+  // if (card) {
+  //   container.scrollBy({ left: -card.offsetWidth, behavior: 'smooth' });
+  // }
 }
 
 scrollLeft(): void {
   console.log('scrollLeft called, current scrollLeft:', this.scrollContainer.nativeElement.scrollLeft);
+  if(window.innerWidth<=430){
   this.scrollContainer.nativeElement.scrollBy({
+    left: -320,
+    behavior: 'smooth'
+  });
+  }
+    if(window.innerWidth<=360){
+      this.scrollContainer.nativeElement.scrollBy({
+    left: -300,
+    behavior: 'smooth'
+  }); 
+}
+   if(window.innerWidth>=1056){
+    this.scrollContainer.nativeElement.scrollBy({
     left: -300,
     behavior: 'smooth'
   });
+}
+
+  //  const container = this.scrollContainer.nativeElement;
+  // const card = container.querySelector('mat-card');
+  // if (card) {
+  //   container.scrollBy({ left: card.offsetWidth, behavior: 'smooth' });
+  // }
 }
 }
